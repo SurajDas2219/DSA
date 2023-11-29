@@ -108,3 +108,12 @@ int main()
     cout << "The SecondLargest Ele:" << getlargest(b, a);
     return 0;
 }
+
+/*
+    Test Cases Added
+    3 4 5 2
+    4 5 3 6 7
+    1 2 3 4 5 6 7 8 9 10
+    1 2 3 4 5 6 6 6
+
+*/
