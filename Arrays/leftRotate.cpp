@@ -62,7 +62,7 @@ Approach:
 
     Time Complexity – O(N) where N is the number of elements in an array
 
-S   pace Complexity – O(1) since no extra space is required
+    Space Complexity – O(1) since no extra space is required
 
  */
 
