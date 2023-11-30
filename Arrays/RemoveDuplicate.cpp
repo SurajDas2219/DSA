@@ -84,11 +84,11 @@ int main()
     vector<int> brr = {1, 3, 3, 3, 4, 5};
     int n = arr.size();
 
-    // int k = removeDuplicate(arr);    //For brute
-    // for (int i = 0; i < k; i++)
-    // {
-    //     cout << arr[i] << " ";
-    // }
+    int k = removeDuplicate(arr); // For brute
+    for (int i = 0; i < k; i++)
+    {
+        cout << arr[i] << " ";
+    }
 
     // printing the array ->optimal one
     int k = removeDupTwoPointer(brr);
