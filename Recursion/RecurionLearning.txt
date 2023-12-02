@@ -1,0 +1,14 @@
+What is recursion: when a function call itself is Known as recursion.
+
+In Desi language:Recursion can be defined as jab bigger problem can be solved as chotti problem of same type is Know As recursion 
+
+Componant of Recursion are defined
+--1.Base Case.          (Mandatory)
+--2.Recursive releation. (Mandatory)
+--3.Some Processing.    (optional)
+
+Head Recursion means:-Recursive relational is defined first before processing.
+Tail Recursion means:-Recursive relational is defined at last after processing.
+
+Problem on Recursion
+--1.Find the factorial of the given number.
