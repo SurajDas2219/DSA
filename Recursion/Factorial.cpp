@@ -20,7 +20,7 @@ int main()
     cin >> n;
 
     int ans = findFactorial(n);
-    cout << "The Factorail of " << n << " is " << ans;
+    cout << "The Factorial of " << n << " is " << ans;
 
     return 0;
 }
