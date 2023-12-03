@@ -2,6 +2,8 @@ What is recursion: when a function call itself is Known as recursion.
 
 In Desi language:Recursion can be defined as jab bigger problem can be solved as chotti problem of same type is Know As recursion 
 
+Magical Line of Recursion:1 case hum solve karenege baaki ka recursion sambhaal legaa❤️!!!😂😂😂
+
 Componant of Recursion are defined
 --1.Base Case.          (Mandatory)
 --2.Recursive releation. (Mandatory)
@@ -12,3 +14,10 @@ Tail Recursion means:-Recursive relational is defined at last after processing.
 
 Problem on Recursion
 --1.Find the factorial of the given number.
+--2.Fibonnaci number.
+--3.Print element in an array.
+--4.Find the element in the array.
+--5.Climbing Stair.
+--6.Print the element in an array in reverse order.
+--7.Check if the given  element is present or not in an array or string.
+--8.Finding maximum and minimum elements in an array.
