@@ -21,3 +21,4 @@ Problem on Recursion
 --6.Print the element in an array in reverse order.
 --7.Check if the given  element is present or not in an array or string.
 --8.Finding maximum and minimum elements in an array.
+--9.Check if an element is sorted or not in ascending order.
