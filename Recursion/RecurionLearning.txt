@@ -22,3 +22,5 @@ Problem on Recursion
 --7.Check if the given  element is present or not in an array or string.
 --8.Finding maximum and minimum elements in an array.
 --9.Check if an element is sorted or not in ascending order.
+--10.Print all the subsequencs of the given string.
+--11.Printing All SubArray Using Recursion.
