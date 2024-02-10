@@ -39,12 +39,35 @@ void naiveAppRearrange(vector<int> &element, int n)
     }
 }
 
+// Approach 2:
+void betterAppForRearrange(vector<int> &element, int n)
+{
+    vector<int> ans(n, 0);
+    int posIndex = 0;
+    int negIndex = 1;
+
+    for (int i = 0; i < n; i++)
+    { // O(N)
+        if (element[i] > 0)
+        {
+            ans[posIndex] = element[i];
+            posIndex += 2;
+        }
+        else
+        {
+            ans[negIndex] = element[i];
+            negIndex += 2;
+        }
+    }
+}
+
 int main()
 {
 
     vector<int> element = {1, -4, 2, -3, -1, 4, -2, 3};
     int n = element.size();
-    naiveAppRearrange(element, n);
+    // naiveAppRearrange(element, n);
+    betterAppForRearrange(element, n);
     cout << "Element after rearranging aternative by sign:";
     for (int i = 0; i < n; i++)
     {
