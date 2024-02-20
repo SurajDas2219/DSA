@@ -52,10 +52,53 @@ int longestSuccessiveElements(vector<int> &a)
     return longest;
 }
 
+// Better Approach
+// Time Complexity =O(nLogn)+O(n);
+// Space complexity=O(1);
+
+int longestSuccessiveELement2(vector<int> &arr)
+{
+    int n = arr.size();
+    if (n == 0)
+    {
+        return 0;
+    }
+    // Step 1:Sort the Given array
+    sort(arr.begin(), arr.end()); // O(N*logN)
+    // create 3 variable
+    int longest = 1;
+    int cnt = 0;
+    int lastNum = INT_MIN;
+
+    // Loop from 1->n
+    for (int i = 0; i < n; i++) // O(N)
+    {
+        // if the lastNum is equal to the (element -1) then increment the count and set the last element as the cuttent element
+        if (arr[i] - 1 == lastNum)
+        {
+            lastNum = arr[i];
+            cnt += 1;
+        }
+        // if arr[i]!=lastNum that means we have found another range of consecutiveness
+        else if (arr[i] != lastNum)
+        {
+            cnt = 1;
+            lastNum = arr[i];
+        }
+        longest = max(cnt, longest);
+    }
+    return longest;
+}
+
 int main()
 {
+    // Brute
     vector<int> a = {100, 200, 1, 2, 3, 4};
     int ans = longestSuccessiveElements(a);
     cout << "The longest consecutive sequence is " << ans << "\n";
+    // Better
+    vector<int> arr = {102, 100, 102, 101, 100, 4, 3, 2, 1, 2, 1, 2, 1, 3, 4};
+    int n = arr.size();
+    cout << "The Length of the LongestConsecutiveElement is:" << longestSuccessiveELement2(arr);
     return 0;
 }
