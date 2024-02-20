@@ -90,6 +90,46 @@ int longestSuccessiveELement2(vector<int> &arr)
     return longest;
 }
 
+// Optimal Approoach
+/*
+Time complexity:O(N):-for inserting element in an unordered set(for the worst case if collision occur otherwise its O(1))
+and O(2N)for the taversal over the loop since we are not looking for element whose "X-1" element do exist in the set,therefore the no of iteration that we made for checkinhg for consecutiveness is2*N
+
+space complexity :O(N); if all element are unique
+*/
+
+int optimalApproach(vector<int> &arr1)
+{
+    int n = arr1.size();
+    int longest = 1;
+    // step 1:insert all the element in unordered set
+    unordered_set<int> st; // Store only unique elements
+    for (int i = 0; i < n; i++)
+    {
+        st.insert(arr1[i]);
+    }
+    // step 2:traverse the arr and check if x is the element then
+    // 1.if "x-1" element is present in the set then its not the start of the consecutive element so do check further
+    // 2.if "x-1" element is not present in the set then the given element x is the starting point of consecutive element;
+
+    for (auto it : st)
+    {
+        if (st.find(it - 1) == st.end())
+        {
+            // that means "x-1 " element is not present in the set,its a starting point
+            int cnt = 1;
+            int x = it;
+            while (st.find(x + 1) != st.end())
+            {
+                x = x + 1;
+                cnt += 1;
+            }
+            longest = max(longest, cnt);
+        }
+    }
+    return longest;
+}
+
 int main()
 {
     // Brute
@@ -100,5 +140,11 @@ int main()
     vector<int> arr = {102, 100, 102, 101, 100, 4, 3, 2, 1, 2, 1, 2, 1, 3, 4};
     int n = arr.size();
     cout << "The Length of the LongestConsecutiveElement is:" << longestSuccessiveELement2(arr);
+
+    cout << endl;
+    // Optimal :You can comment out the other function to execute the given function
+    vector<int> arr1 = {6, 3, 14, 18, 8, 18, 4, 3, 12, 1, 14, 7, 9, 22, 11, 28, 24, 22, 30, 13, 2, 19, 8, 8, 18, 14, 11, 13, 1};
+
+    cout << "The Length of the LongestConsecutiveElement is:" << optimalApproach(arr1);
     return 0;
 }
