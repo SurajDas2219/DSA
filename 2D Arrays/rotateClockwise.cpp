@@ -43,6 +43,33 @@ vector<vector<int>> bruteApp(vector<vector<int>> &matrix)
     return rotate;
 }
 
+// Optimal Approach:
+/*
+
+1st DO the tanspose of the matrix.
+2nd Reverse each row of the matrix.
+
+Time Complexity:-O(2*N*N);
+space complexity:-O(1);
+
+*/
+
+void optimalApp(vector<vector<int>> &mat)
+{
+    int n = mat.size();
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            swap(mat[i][j], mat[j][i]);
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        reverse(mat[i].begin(), mat[i].end());
+    }
+}
+
 int main()
 {
     vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
@@ -55,6 +82,22 @@ int main()
             cout << it << " ";
         }
         cout << endl;
+    }
+
+    cout << endl;
+    // Optimal Approach
+    vector<vector<int>> mat = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int n = mat.size();
+    int m = mat[0].size();
+    optimalApp(mat);
+    cout << "After Rotating matrix at 90 degree ClockWise:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << "\n";
     }
 
     return 0;
