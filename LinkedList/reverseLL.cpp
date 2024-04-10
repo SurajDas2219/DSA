@@ -67,3 +67,12 @@ int main()
     printLL(head);
     return 0;
 }
+
+/*
+OUTPUT:
+Before reversing a LL
+1 2 3 4 5
+After reversing a LL
+5 4 3 2 1
+
+*/
